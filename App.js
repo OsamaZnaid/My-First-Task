@@ -17,10 +17,10 @@ import ListItem from './src/screens/ListItem/ListItem';
 import AddItem from './src/screens/AddItem/Additem';
 const App = () => {
   const [items ,setItems]=useState([
-    {id:'1' , text:'Milk'},
-    {id:'2', text:'Eggs'},
-    {id:'3', text:'Bread'},
-    {id:'4', text:'Juice'},
+    {id: uuid() , text:'Milk'},
+    {id: uuid() , text:'Eggs'},
+    {id: uuid(), text:'Bread'},
+    {id: uuid(), text:'Juice'},
   ]);
   const deleteItem =id =>{
     setItems(prevItems =>{
@@ -32,7 +32,7 @@ const App = () => {
       Alert.alert('Error','please enter an item',{text:'ok'});
     }else{
       setItems(prevItems=>{
-        return[{id:'5',text}, ...prevItems];
+        return[{id:uuid(),text}, ...prevItems];
       });
     }
     
